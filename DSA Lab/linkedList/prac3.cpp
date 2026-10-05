@@ -5,6 +5,30 @@ struct Node{
     int data;
     Node* next;
 };
+void countNodes(Node *head){
+    Node* current = head;
+    //storing the address of the head
+    int count =0;
+    while(current != nullptr){
+        current =current->next;
+        count++;
+    }
+    cout<<"The number of nodes is: "<<count;
+}
+
+void findLargest(Node *head){
+    Node *current =head;
+    Node *largest =head;
+    largest->data =0;
+    largest->next =nullptr;
+    while(current != nullptr){
+        if(current->data>largest->data){
+            largest=current;
+        }
+        current =current->next;
+    }
+    cout<<"The largest node is "<<largest->data;
+}
 
 //inserting into the middle
 int main(){
